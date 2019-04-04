@@ -1,14 +1,19 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Honeywell Test APP
     </ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <div class="ion-padding ion-text-center">
+    <div *ngIf="message" style="margin: 10px 0; padding:20px">{{message}}</div>
+    <button style="margin-bottom: 10px; padding: 20px; background: #ccc; width: 100%;" (click)="status == 'disabled' ? enable() : disable()">{{status == 'disabled' ? 'ENABLE' : 'DISABLE' }} SCANNER</button>
+    <div style="padding:20px;">Status: {{status}}</div>
+    <ul>
+      <li *ngFor="let code of barcodes">{{code}}<br></li>
+    </ul>
+
+  </div>
 </ion-content>
