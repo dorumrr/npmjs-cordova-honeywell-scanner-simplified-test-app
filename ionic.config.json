@@ -1,6 +1,6 @@
 {
   "name": "honeywell",
-  "app_id": "",
+  "app_id": "com.doru-moraru.cordova-honeywell-scanner-simplified-test-app",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

@@ -9,11 +9,10 @@
 <ion-content>
   <div class="ion-padding ion-text-center">
     <div *ngIf="message" style="margin: 10px 0; padding:20px">{{message}}</div>
-    <button style="margin-bottom: 10px; padding: 20px; background: #ccc; width: 100%;" (click)="status == 'disabled' ? enable() : disable()">{{status == 'disabled' ? 'ENABLE' : 'DISABLE' }} SCANNER</button>
-    <div style="padding:20px;">Status: {{status}}</div>
+    <button style="margin-bottom: 40px; padding: 20px; width: 100%; color: #ffffff;" [ngStyle]="{'background': status == 'disabled' ? 'darkred' : 'darkgreen'}" (click)="status == 'disabled' ? enable() : disable()">SCAN READER IS {{status == 'disabled' ? 'DISABLED' : 'ENABLED' }}</button>
+    <button *ngIf="status == 'enabled'" style="margin-bottom: 10px; padding: 20px; background: purple; color: #ffffff; width: 100%;" (touchstart)="scanPressed()" (touchend)="scanReleased()">CLICK AND HOLD TO SCAN</button>
     <ul>
       <li *ngFor="let code of barcodes">{{code}}<br></li>
     </ul>
-
   </div>
 </ion-content>
