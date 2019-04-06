@@ -26,13 +26,10 @@ export class HomePage implements OnInit {
         this.barcodes = [`${error} @ ${new Date().toISOString().replace(/[T,Z]/g, " ").split('.')[0]}`, ...this.barcodes]
       });
     });
-    // stop reader after five seconds if nothing scanned
   }
   scanReleased () {
     this.window.plugins.honeywell.softwareTriggerStop();
   }
-
-
 
   listen () {
     this.status = `enabled`;
